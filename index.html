@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Lime | Fighting Game Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content hidden" data-scroll>
+
+                <div class="logo-container">
+                    <img src="photos/logo1.png" alt="Logo Team Lime" class="team-logo">
+                </div>
+
+                <h1 class="main-title">TEAM <span class="lime-text">LIME</span></h1>
+
+                <nav class="hero-nav">
+                    <a href="#game">Projet</a>
+                    <span class="separator">//</span>
+                    <a href="#roster">L'Équipe</a>
+                </nav>
+
+                <div class="intro-box">
+                    <p>
+                        Bienvenue dans l'univers de <strong>Lime</strong>. Une équipe de développement fraîchement
+                        éclose, débordante d'énergie.
+                        Nous bousculons les codes pour insuffler un vent de fraîcheur sur la scène vidéoludique.
+                        <strong>Saveur, Éclat, Fun.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="game" class="content-section">
+            <div class="card project-card hidden" data-scroll>
+                <div class="card-header">
+                    <span class="tag">UNITY 2D</span>
+                    <h2>FIGHTING ENGINE</h2>
+                </div>
+
+                <p class="project-hook">Un VS Fighting nerveux, technique et sans concession.</p>
+
+                <div class="grid-2-col">
+                    <div class="col">
+                        <h4>Gameplay Core</h4>
+                        <p>Jeu développé sur <strong>Unity</strong>. Gestion des <em>hitboxes</em> au pixel près et
+                            système de combos à la <em>frame</em> pour une précision extrême.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Art & Sound</h4>
+                        <p>Direction artistique Pixel Art fluide (via <strong>Aseprite</strong>) et bande-son dynamique
+                            composée sur <strong>FL Studio</strong> pour un impact maximal.</p>
+                    </div>
+                </div>
+
+                <div class="video-wrapper">
+                    <h4>Gameplay Demo (Alpha)</h4>
+                    <div class="video-container">
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/wf4wB6bj9es"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="roster" class="content-section">
+            <h2 class="section-title hidden" data-scroll>ROSTER</h2>
+            <div class="roster-grid">
+
+                <div class="member hidden" data-scroll>
+                    <div class="photo-container">
+                        <img src="photos/kyky.png" alt="Kyllian">
+                    </div>
+                    <div class="info">
+                        <h3>Kyllian</h3>
+                        <span>Dev Unity</span>
+                        <p class="mini-desc">Gestion des scènes</p>
+                    </div>
+                </div>
+
+                <div class="member hidden" data-scroll>
+                    <div class="photo-container">
+                        <img src="photos/jojo.png" alt="Johann">
+                    </div>
+                    <div class="info">
+                        <h3>Johann</h3>
+                        <span>UI/UX</span>
+                        <p class="mini-desc">Menus & Navigation</p>
+                    </div>
+                </div>
+
+                <div class="member hidden" data-scroll>
+                    <div class="photo-container">
+                        <img src="photos/bg.png" alt="Iles">
+                    </div>
+                    <div class="info">
+                        <h3>Iles</h3>
+                        <span>Features</span>
+                        <p class="mini-desc">Économie & Boutique</p>
+                    </div>
+                </div>
+
+                <div class="member hidden" data-scroll>
+                    <div class="photo-container">
+                        <img src="photos/lucas.png" alt="Lucas">
+                    </div>
+                    <div class="info">
+                        <h3>Lucas</h3>
+                        <span>Gameplay</span>
+                        <p class="mini-desc">Mécaniques & Physique</p>
+                    </div>
+                </div>
+
+                <div class="member hidden" data-scroll>
+                    <div class="photo-container">
+                        <img src="photos/thomas.png" alt="Thomas">
+                    </div>
+                    <div class="info">
+                        <h3>Thomas</h3>
+                        <span>Audio / Art</span>
+                        <p class="mini-desc">SFX, Musique & Décors</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> TEAM LIME // PRESS START TO CONTINUE</p>
+    </footer>
+
+</body>
+
+</html>
