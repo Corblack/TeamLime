@@ -36,12 +36,13 @@ body {
 }
 
 .logo-container {
+    padding-left: 95px;
     margin-bottom: 2rem;
     animation: float 6s ease-in-out infinite;
 }
 
 .team-logo {
-    width: 250px;
+    width: 700px;
     height: auto;
     display: block;
     filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
