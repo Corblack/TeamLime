@@ -4,7 +4,7 @@ html {
 }
 
 :root {
-    --lime: #ccff00;       /* Vert néon */
+    --lime: #32CD32;       /* Vert néon */
     --black: #111;         /* Noir profond */
     --grey: #f4f4f4;
     --text: #333;
@@ -85,7 +85,7 @@ body {
 }
 
 .hero-nav a:hover {
-    color: #88aa00;
+    color: #32CD32;
     text-decoration: underline;
 }
 
