@@ -1,11 +1,11 @@
-/* --- CONFIGURATION GLOBALE --- */
+/* --- GLOBAL CONFIGURATION --- */
 html {
     scroll-behavior: smooth;
 }
 
 :root {
-    --lime: #32CD32;       /* Vert néon */
-    --black: #111;         /* Noir profond */
+    --lime: #32CD32;       /* Neon green */
+    --black: #111;         /* Deep black */
     --grey: #f4f4f4;
     --text: #333;
 }
@@ -16,7 +16,7 @@ body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
     color: var(--text);
     background-color: #fafafa;
-    /* FOND PAPIER MILLIMÉTRÉ */
+    /* GRAPH PAPER BACKGROUND */
     background-image: 
         linear-gradient(#e5e5e5 1px, transparent 1px),
         linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
@@ -119,7 +119,7 @@ body {
     display: inline-block;
 }
 
-/* --- CARTE PROJET --- */
+/* --- PROJECT CARD --- */
 .card {
     background: #fff;
     border: 2px solid var(--black);
@@ -162,7 +162,7 @@ h2 { margin-top: 10px; font-size: 2.5rem; text-transform: uppercase; letter-spac
 
 h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #555; text-transform: uppercase; border-bottom: 2px solid var(--lime); display: inline-block; }
 
-/* --- STYLE VIDEO (YOUTUBE) --- */
+/* --- VIDEO STYLE (YOUTUBE) --- */
 .video-wrapper {
     margin-top: 3rem;
     border-top: 1px dashed #ddd;
@@ -175,10 +175,10 @@ h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #555; text-transform: uppe
     position: relative;
 }
 
-/* Cible l'iframe Youtube pour le style */
+/* Target the YouTube iframe for styling */
 .video-container iframe {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Garde le format rectangulaire vidéo */
+    aspect-ratio: 16 / 9; /* Keeps the video's rectangular aspect ratio */
     border-radius: 4px;
     border: 2px solid var(--black);
     box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
