@@ -403,14 +403,15 @@ footer {
 }
 
 .character-name {
-    padding: 0.8rem;
-    background-color: var(--black);
-    color: white;
+    padding: 1rem;
+    background-color: #fff;
+    color: var(--text);
     text-align: center;
 }
 
 .character-name h3 {
     font-size: 1.2rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0;
@@ -600,14 +601,15 @@ body.modal-open {
 }
 
 .map-name {
-    padding: 0.8rem;
-    background-color: var(--black);
-    color: white;
+    padding: 1rem;
+    background-color: #fff;
+    color: var(--text);
     text-align: center;
 }
 
 .map-name h3 {
     font-size: 1.2rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0;
