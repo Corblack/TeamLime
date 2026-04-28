@@ -10,6 +10,11 @@ html {
     --text: #333;
 }
 
+/* --- WIKI THEME OVERRIDE --- */
+body.wiki-theme {
+    --lime: #ff3333; /* Neon red */
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -85,7 +90,7 @@ body {
 }
 
 .hero-nav a:hover {
-    color: #32CD32;
+    color: var(--lime);
     text-decoration: underline;
 }
 
@@ -100,6 +105,10 @@ body {
     padding: 2rem;
     border: 2px solid var(--black);
     box-shadow: 8px 8px 0px var(--lime);
+}
+
+body.wiki-theme .intro-box {
+    max-width: 1100px;
 }
 
 /* --- SECTIONS --- */
@@ -244,4 +253,349 @@ footer {
     font-size: 0.9rem; 
     margin-top: 2rem; 
     color: #999;
+}
+
+/* --- BURGER MENU & SIDE NAVIGATION --- */
+.burger-menu {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.burger-menu div {
+    width: 35px;
+    height: 4px;
+    background-color: var(--black);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.burger-menu.active .line1 {
+    transform: translateY(10px) rotate(45deg);
+    background-color: var(--lime);
+}
+.burger-menu.active .line2 {
+    opacity: 0;
+}
+.burger-menu.active .line3 {
+    transform: translateY(-10px) rotate(-45deg);
+    background-color: var(--lime);
+}
+
+/* --- SIDE NAV --- */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    transition: left 0.4s ease;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.side-nav.active {
+    left: 0;
+}
+
+.side-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.side-nav a:hover {
+    color: var(--lime);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- WIKI CHARACTER ROSTER --- */
+.character-roster-section {
+    width: 100%;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.character-scroll-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem clamp(1rem, 5vw, 4rem);
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.character-card {
+    flex: 0 0 200px;
+    height: 280px;
+    border: 3px solid var(--black);
+    background-color: #fff;
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 0px var(--lime);
+}
+
+.character-portrait {
+    flex-grow: 1;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #ccc;
+    border-bottom: 3px solid var(--black);
+    overflow: hidden;
+}
+
+.character-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px; /* Ajoute un petit espace pour que l'image ne touche pas les bords */
+    image-rendering: pixelated;
+    /* Ombre portée qui suit la forme transparente de l'image */
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));
+    transition: filter 0.3s ease;
+}
+
+.character-card:hover .character-portrait img {
+    filter: drop-shadow(4px 4px 0px var(--lime));
+}
+
+.character-name {
+    padding: 0.8rem;
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+}
+
+.character-name h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* --- CHARACTER MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    border: 3px solid var(--black);
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 10px 10px 0px var(--lime);
+    padding: 3rem;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--black);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* --- Layout spécifique pour les maps dans la modale --- */
+.modal-overlay.map-modal .modal-body {
+    grid-template-columns: 350px 1fr; /* 2 colonnes comme les persos, mais avec une image plus large (paysage) */
+}
+
+.modal-overlay.map-modal .modal-character-img {
+    height: auto;
+    object-fit: contain; /* L'image s'affiche en entier sans être rognée */
+    filter: none; /* Désactive le détourage prévu pour les sprites transparents */
+    border: 3px solid var(--black); /* Cadre solide propre */
+    box-shadow: 8px 8px 0px var(--lime); /* Ombre de bloc classique */
+    background-color: var(--black); /* Fond sombre si l'image ne remplit pas parfaitement */
+}
+
+.modal-character-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain; /* S'assure que le personnage entier est visible */
+    image-rendering: pixelated;
+    /* Création d'un contour noir (outline) et d'une ombre verte sur les pixels exacts */
+    filter: 
+        drop-shadow(2px 0 0 var(--black)) 
+        drop-shadow(-2px 0 0 var(--black)) 
+        drop-shadow(0 2px 0 var(--black)) 
+        drop-shadow(0 -2px 0 var(--black))
+        drop-shadow(8px 8px 0px var(--lime));
+}
+
+.modal-character-details h3 {
+    font-size: 2.2rem; /* Légèrement réduit pour s'adapter à l'espace */
+    text-transform: uppercase;
+    color: var(--lime);
+    -webkit-text-stroke: 1px var(--black);
+    text-shadow: 3px 3px 0px var(--black);
+    margin-bottom: 1rem;
+    overflow-wrap: break-word; /* Empêche le texte de déborder */
+    line-height: 1.1; /* Améliore l'espacement si le titre passe sur 2 lignes */
+}
+
+.modal-character-details p {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@media(max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .modal-character-img {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    /* Sur mobile, la map prend toute la largeur */
+    .modal-overlay.map-modal .modal-character-img {
+        max-width: 100%;
+        height: 200px;
+    }
+}
+
+/* --- WIKI MAP ROSTER --- */
+.map-roster-section {
+    width: 100%;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.map-scroll-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem clamp(1rem, 5vw, 4rem);
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.map-card {
+    flex: 0 0 300px;
+    height: 200px;
+    border: 3px solid var(--black);
+    background-color: #fff;
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.map-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 0px var(--lime);
+}
+
+.map-portrait {
+    flex-grow: 1;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #ccc;
+    border-bottom: 3px solid var(--black);
+    overflow: hidden;
+}
+
+.map-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    /* Ombre portée qui suit la forme transparente de l'image */
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));
+    transition: filter 0.3s ease;
+}
+
+.map-card:hover .map-portrait img {
+    filter: drop-shadow(4px 4px 0px var(--lime));
+}
+
+.map-name {
+    padding: 0.8rem;
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+}
+
+.map-name h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
 }
