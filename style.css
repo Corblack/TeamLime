@@ -15,7 +15,7 @@ body.wiki-theme {
     --lime: #ff3333; /* Neon red */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; color: var(--text);}
 
 body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
@@ -205,6 +205,7 @@ h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #555; text-transform: uppe
     justify-content: center;
     gap: 2rem;
     max-width: 1200px;
+    color: var(--text);
 }
 
 .member {
