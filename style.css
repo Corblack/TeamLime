@@ -68,6 +68,10 @@ body {
     color: var(--black);
 }
 
+body.wiki-theme .main-title {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+}
+
 .lime-text {
     color: var(--lime);
     -webkit-text-stroke: 1px var(--black);
@@ -239,6 +243,7 @@ h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #555; text-transform: uppe
 @media(max-width: 768px) {
     .grid-2-col { grid-template-columns: 1fr; }
     .main-title { font-size: 3.5rem; }
+    body.wiki-theme .main-title { font-size: 2.2rem; }
     .intro-box { padding: 1.5rem; }
 }
 
@@ -322,6 +327,18 @@ footer {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.side-nav a.wiki-link:hover {
+    color: #ff3333;
+}
+
+.side-nav a.team-link:hover {
+    color: #32CD32;
+}
+
+.side-nav a.itch-link:hover {
+    color: #FFD700;
+}
+
 /* --- WIKI CHARACTER ROSTER --- */
 .character-roster-section {
     width: 100%;
@@ -374,9 +391,8 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 10px; /* Ajoute un petit espace pour que l'image ne touche pas les bords */
+    padding: 10px;
     image-rendering: pixelated;
-    /* Ombre portée qui suit la forme transparente de l'image */
     filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));
     transition: filter 0.3s ease;
 }
@@ -460,26 +476,24 @@ footer {
     align-items: flex-start;
 }
 
-/* --- Layout spécifique pour les maps dans la modale --- */
 .modal-overlay.map-modal .modal-body {
-    grid-template-columns: 350px 1fr; /* 2 colonnes comme les persos, mais avec une image plus large (paysage) */
+    grid-template-columns: 350px 1fr;
 }
 
 .modal-overlay.map-modal .modal-character-img {
     height: auto;
-    object-fit: contain; /* L'image s'affiche en entier sans être rognée */
-    filter: none; /* Désactive le détourage prévu pour les sprites transparents */
-    border: 3px solid var(--black); /* Cadre solide propre */
-    box-shadow: 8px 8px 0px var(--lime); /* Ombre de bloc classique */
-    background-color: var(--black); /* Fond sombre si l'image ne remplit pas parfaitement */
+    object-fit: contain;
+    filter: none;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0px var(--lime);
+    background-color: var(--black);
 }
 
 .modal-character-img {
     width: 100%;
     max-height: 400px;
-    object-fit: contain; /* S'assure que le personnage entier est visible */
+    object-fit: contain;
     image-rendering: pixelated;
-    /* Création d'un contour noir (outline) et d'une ombre verte sur les pixels exacts */
     filter: 
         drop-shadow(2px 0 0 var(--black)) 
         drop-shadow(-2px 0 0 var(--black)) 
@@ -489,14 +503,14 @@ footer {
 }
 
 .modal-character-details h3 {
-    font-size: 2.2rem; /* Légèrement réduit pour s'adapter à l'espace */
+    font-size: 2.2rem;
     text-transform: uppercase;
     color: var(--lime);
     -webkit-text-stroke: 1px var(--black);
     text-shadow: 3px 3px 0px var(--black);
     margin-bottom: 1rem;
-    overflow-wrap: break-word; /* Empêche le texte de déborder */
-    line-height: 1.1; /* Améliore l'espacement si le titre passe sur 2 lignes */
+    overflow-wrap: break-word;
+    line-height: 1.1;
 }
 
 .modal-character-details p {
@@ -517,7 +531,6 @@ body.modal-open {
         max-width: 250px;
         margin: 0 auto;
     }
-    /* Sur mobile, la map prend toute la largeur */
     .modal-overlay.map-modal .modal-character-img {
         max-width: 100%;
         height: 200px;
@@ -577,7 +590,6 @@ body.modal-open {
     height: 100%;
     object-fit: contain;
     image-rendering: pixelated;
-    /* Ombre portée qui suit la forme transparente de l'image */
     filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));
     transition: filter 0.3s ease;
 }

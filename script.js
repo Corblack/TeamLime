@@ -50,7 +50,6 @@ if (modal) { // Only run this code if the modal exists on the page
             const img = card.dataset.img;
             const lore = card.dataset.lore;
 
-            // Ajoute une classe spéciale si c'est une map
             if (card.classList.contains('map-card')) {
                 modal.classList.add('map-modal');
             } else {
